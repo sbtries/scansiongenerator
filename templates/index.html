@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title>Home</title>
+{% endblock %}
+
+{% block body %} 
+<div id="form-main">
+  <div id="form-div">
+    <h1> Scansion Generator</h1>
+
+    <form class="form" id="form1" action = "http://localhost:5000/" method='POST'>
+      
+      <p class="title">
+        <input name="title" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="title" id="title" />
+      </p>
+      
+      <p class="author">
+        <input name="author" type="text" class="validate[required,custom[author]] feedback-input" id="author" placeholder="author" />
+      </p>
+      
+      <p class="poem">
+        <textarea name="poem" class="validate[required,length[6,300]] feedback-input" id="poem" placeholder="poem"></textarea>
+      </p>
+
+      <div class="submit">
+        <input type="submit" value="SEND" id="button-blue"/>
+        <div class="ease"></div>
+      </div>
+    </form>
+
+    <div class="table-title">
+      <h3>{{title}}</h3>
+    </div>
+    <table id="table">
+      <tr>
+        <th class="text-left">Lines</th>
+        <th class="text-left"># Syllables</th>
+
+    </tr>
+      {% for scan in scansion %}
+      {% for k, v in scan.items() %}
+        <tr>
+          <td>{{k}}</td>
+          <td>{{v}}</td>
+        </tr>
+      {% endfor %}
+      {% endfor %}
+  
+      </table>
+  </div>
+
+
+  {% endblock %}
