@@ -18,12 +18,16 @@ html{   background:url('pexels.jpg') no-repeat center center fixed;;
 
 #form-main{
 	width:100%;
+	height: 100%;
 	float:left;
 	padding-top:0px;
 }
-
+/* style="width: 100%; height:100vh;" */
 #form-div {
-	background-color:rgba(72,72,72,0.4);
+	height: 100vh;
+	width: 100%;
+	overflow: scroll;
+	background-color:rgba(72,72,72,0.7);
 	padding-left:35px;
 	padding-right:35px;
 	padding-top:35px;
@@ -247,11 +251,11 @@ input:focus, textarea:focus {
    
   td {
 	background:#FFFFFF;
-	padding:20px;
+	padding:2px;
 	text-align:left;
 	vertical-align:middle;
 	font-weight:300;
-	font-size:18px;
+	font-size:12px;
 	text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
 	border-right: 1px solid #C1C3D1;
   }
@@ -392,3 +396,5 @@ input:focus, textarea:focus {
       ul > li:after {
         box-shadow:none;  
       }
+
+
